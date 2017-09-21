@@ -50,6 +50,7 @@ for xpPlayer in players {
 }
 
 // adding experience players to the teams
+
 for i in experiencedPlayers {
     if teamSharks.count < 3  {
         teamSharks.append(i)
@@ -67,16 +68,16 @@ for i in experiencedPlayers {
 
 // adding inexperience players to the teams
 
-for j in inExperiencedPlayers {
+for i in inExperiencedPlayers {
     if teamSharks.count < 6  {
-        teamSharks.append(j)
+        teamSharks.append(i)
         
     } else if teamRaptors.count < 6 {
-        teamRaptors.append(j)
+        teamRaptors.append(i)
         print(teamRaptors)
         
     } else if teamDragons.count < 6 {
-        teamDragons.append(j)
+        teamDragons.append(i)
 
     }
     
@@ -100,7 +101,12 @@ for player in teamRaptors {
 }
 
 letters.count
-print(letters)
+
+
+for i in 0..<letters.count {
+    print(letters[i])
+}
+
 
 
 
