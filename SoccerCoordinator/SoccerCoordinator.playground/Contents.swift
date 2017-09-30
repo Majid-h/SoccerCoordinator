@@ -40,7 +40,7 @@ var teamDragons:[[String:String]] = []
 var teamRaptors:[[String:String]] = []
 
 for xpPlayer in players {
-    for (key, value) in xpPlayer {
+    for (_, value) in xpPlayer {
         if(value == "yes") {
             experiencedPlayers.append(xpPlayer)
         } else if (value == "no"){
@@ -51,36 +51,30 @@ for xpPlayer in players {
 
 // adding experience players to the teams
 
-for i in experiencedPlayers {
-    if teamSharks.count < 3  {
-        teamSharks.append(i)
-        print(teamSharks)
-        
-    } else if teamRaptors.count < 3 {
-        teamRaptors.append(i)
-        print(teamRaptors)
-        
-    } else if teamDragons.count < 3 {
-        teamDragons.append(i)
-        print(teamDragons)
+for i in 0..<experiencedPlayers.count {
+    let player = experiencedPlayers[i]
+    let mod = i % 3
+    if mod == 0 {
+        teamRaptors.append(player)
+    } else if mod == 1 {
+        teamDragons.append(player)
+    } else {
+        teamSharks.append(player)
     }
 }
 
 // adding inexperience players to the teams
 
-for i in inExperiencedPlayers {
-    if teamSharks.count < 6  {
-        teamSharks.append(i)
-        
-    } else if teamRaptors.count < 6 {
-        teamRaptors.append(i)
-        print(teamRaptors)
-        
-    } else if teamDragons.count < 6 {
-        teamDragons.append(i)
-
+for i in 0..<inExperiencedPlayers.count {
+    let player = inExperiencedPlayers[i]
+    let mod = i % 3
+    if mod == 0 {
+        teamRaptors.append(player)
+    } else if mod == 1 {
+        teamDragons.append(player)
+    } else {
+        teamSharks.append(player)
     }
-    
 }
 
 // PART THREE
